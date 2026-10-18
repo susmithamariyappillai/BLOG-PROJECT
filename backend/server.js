@@ -7,7 +7,15 @@ import authRoutes from "./routes/auth.js";
 
 const app = express();
 
-app.use(cors({ origin: process.env.CLIENT_URL }));
+
+
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://blog-project-9rk9-two.vercel.app"
+  ],
+  credentials: true
+}));
 app.use(express.json());
 
 app.get("/", (req, res) => res.send("Blog API is running"));
