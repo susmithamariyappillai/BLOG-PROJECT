@@ -1,6 +1,6 @@
 import { auth } from "./firebase";
 
-const API = import.meta.env.VITE_API_URL;
+ const API = `${import.meta.env.VITE_API_URL}/api`;
 
 // One helper for every request. Adds the login token when a user is logged in.
 async function request(path, method = "GET", body) {
